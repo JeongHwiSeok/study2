@@ -18,12 +18,18 @@
     <ClCompile Include="note.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Mechanic.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Vulture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="(2023.9.7)참조자.h">
+    <ClInclude Include="Mechanic.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="(2023.9.8)범위지정연산자.h">
+    <ClInclude Include="Vulture.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

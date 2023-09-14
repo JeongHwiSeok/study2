@@ -1,97 +1,46 @@
 #include <iostream>
+#include "Vulture.h"
 using namespace std;
 
-#pragma region 클래스
-	// 사용자 정의 데이터 유형으로 속성과 함수가 포함되어 있으며, 클래스를 통해 객체를 생성하여 접근하고 사용할 수 있는 집합체
+#pragma region 다형성
+	// 여러 개의 서로 다른 객체가 동일한 기능을 서로 다른 방법으로 처리할 수 있는 작업
 
-class GameObject
-{
-	// 접근 지정자
-	// 클래스 내부의 포함되어 있는 속성에 접근 범위를 제한하는 지정자
-	
-	// public : 클래스 내부와 자기가 상속하고 있는 클래스 그리고 클래스 외부에서 접근을 허용하는 지정자
-	
-	// protected : 클래스 내부와 자기가 상속하고 있는 클래스까지만 접근을 허용하는 지정자
-	
-	// private : 클래스 내부에서만  접근을 허용하는 지정자
-	
-	// 기본 접근 지정자 (private)
-	
-
-public :
-	float x;
-
-	void SendMessage()
-	{
-		cout << "메시지" << endl;
-	}
-protected :
-	double y;
-private :
-	float z;
-
-	
-};
-
+	// 다형성은 컴파일 시점에 함수와 속성이 결정되는 정적 바인딩을 하지 않고, 실행 시간에 함수와 속성이 결정될 수 있는 동적 바인딩을 가능하게 함
 #pragma endregion
 
-#pragma region 생성자와 소멸자
-	// <생성자>
-	// 클래스의 인스턴스가 생성되는 시점에서 자동으로 호출되는 특수한 멤버 함수
 
-	class Monster
-	{
-	private:
-		int health;
-		
-	public:
-		Monster()
-		{
-			cout << "Monster 생성" << endl;
-		}
-
-		// 생정자의 경우 객체가 생성될 때 단 한 번만 호출되며, 생성자는 반환형이 존재하지 않기 때문에 생성자가 호출되기 전에는 객체에 대한 메모리는 할당하지 않음
-
-		// <소멸자>
-		// 객체가 소멸될 때 자동으로 실행되는 클래스의 멤버 함수
-		~Monster()
-		{
-			cout << "Monster 소멸" << endl;
-		}
-		
-		// 소멸자는 객체가 메모리에서 해제될 대 단 한 번만 호출되며, 소멸자에는 매개변수를 생성하여 사용할 수 없음.
-	};
-
-#pragma endregion
 
 
 int main()
 {
+#pragma region 오버라이드
+	//Mechanic mechanic;
+	//mechanic.Move();
 
-#pragma region 클래스
+	//Vulture vulture;
+	//vulture.Move();
+#pragma endregion
 
-	//GameObject gameobject1;
-	//GameObject gameobject2;
+#pragma region 가상 함수
+	// 상속하는 클래스 내에서 같은 형태의 함수로 재정의 될 수 있는 함수
+	
+	Mechanic * mechanic1 = new Vulture;
+	
+	/*cout << "Mechanic의 크기 : " << sizeof(Mechanic) << endl;
+	cout << "Vulture의 크기 : " << sizeof(Vulture) << endl;*/
+	mechanic1->Move();
+	mechanic1->Attack();
 
-	//cout << sizeof(GameObject) << endl;
+	//Vulture* mechanic2 = new Vulture;
+	//mechanic2->Move();
 
-	//gameobject1.SendMessage();
-	//gameobject2.SendMessage();
+	// 타입이 메카닉이기 때문에 포인터의 주소가 메카닉 클래스에서부터 이기 때문에 메카닉만 호출됨
+	// 가상 함수 실행 시간에 상위 클래스에 대한 참조로 하위 클래스에 재정의 된 함수를 호출할 수 있으며, 접근 지정자는 공개로 설정해야함
 
-	////cout << "gameobject.x : " << gameobject.x << endl;
 
 #pragma endregion
 
-#pragma region 생성자와 소멸자
-
-	Monster monster;
-
-	Monster* ptr = new Monster;
-
-	delete ptr;
-
-#pragma endregion
-
+	// 숙제 : 
 
 	return 0;
 }

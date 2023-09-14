@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Mechanic.cpp" />
     <ClCompile Include="note.cpp" />
+    <ClCompile Include="Vulture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="(2023.9.7)참조자.h" />
-    <ClInclude Include="(2023.9.8)범위지정연산자.h" />
+    <ClInclude Include="Mechanic.h" />
+    <ClInclude Include="Vulture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
